@@ -15,7 +15,7 @@ int _sqrt(int x, int y)
 	{
 		return (-1);
 	}
-	return (_sqrt1(x, y + 1));
+	return (_sqrt(x, y + 1));
 }
 
 /**
