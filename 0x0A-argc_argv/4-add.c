@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * main - entry point
+ * main - multiplies two integers
  * @argc: argument count
  * @argv: argument vector
  * Return: success 0
@@ -11,7 +11,8 @@
 
 int main(int argc, char *argv[])
 {
-	int i, a, sum = 0;
+	int i, j, sum = 0;
+	char *a;
 
 	if (argc == 1)
 	{
@@ -20,18 +21,20 @@ int main(int argc, char *argv[])
 	}
 	for (i = 1; i < argc; i++)
 	{
-		a = atoi(argv[i]);
-		if (a == 0 && argv[i][0] != '0')
+		a = argv[i];
+		for (j = 0; a[j] != '\0'; j++)
 		{
-			printf("Error\n");
-			return (1);
+			if (!(isdigit(a[j])))
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		if (a < 0)
-		{
-			printf("Error\n");
-			return (1);
-		}
-		sum += a;
+	}
+
+	for (i = 1; i < argc; i++)
+	{
+		sum += atoi(argv[i]);
 	}
 	printf("%d\n", sum);
 	return (0);
