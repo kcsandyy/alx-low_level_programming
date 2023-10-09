@@ -6,7 +6,7 @@
  * @age: The puppy's age
  * @owner: The puppy's owner
  */
-struct dog
+typedef struct dog
 {
 	char *name;
 	float age;
