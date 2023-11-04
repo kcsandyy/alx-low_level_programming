@@ -7,7 +7,7 @@
 #define size 1024
 
 /**
- * handles_errors - Handles errors
+ * handles_error - Handles errors
  * @code: The exit code
  * @message: The error message
  * @file: The file generating the error
@@ -18,8 +18,15 @@ void handles_error(int code, const char *message, const char *file)
 	dprintf(code, "Error: %s %s", message, file);
 	exit(code);
 }
+/**
+ * cp - copies two files
+ * @file1: The first file
+ * @file2: The second file
+ * Return: Nothing
+ */
 
-void cp(const char *file1 ,const char *file2)
+
+void cp(const char *file1, const char *file2)
 {
 	char buffer[size];
 	int file_from, file_to;
